@@ -1,0 +1,11 @@
+rootProject.name = 'example'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+// include ":UnityExport"
+// project(":UnityExport").projectDir = file("./UnityExport")
+include ':unityLibrary'
+project(':unityLibrary').projectDir=new File('..\\unity\\builds\\android\\unityLibrary')
+include ':@react-native-voice_voice'
+project(':@react-native-voice_voice').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-voice/voice/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-camera/android')
